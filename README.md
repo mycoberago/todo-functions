@@ -5,6 +5,8 @@ When the same app bundle is deployed via Vercel hosting, it works as expected.
 
 This issue was an opportunity to develop a solution by using a serverless architecture by building our own Firebase Cloud Functions.
 
+Here is the [link to the issue on GitHub](https://github.com/firebase/firebase-tools/issues/6653).
+
 #### Below are the Tutorials that led to this mini project:
 * [Full Video Tutorial](https://youtu.be/C3iYBxO8Iao)
     * [1.  Project Intro & Basic UI Dev](https://youtu.be/2qkdFs6JnSg)

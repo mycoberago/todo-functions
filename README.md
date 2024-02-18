@@ -18,3 +18,6 @@ Here is the [link to the issue on GitHub](https://github.com/firebase/firebase-t
     * [9.  Initial Firebase Deployment](https://youtu.be/yXwgof1Qvss)
     * [10.  Build Firebase/Google Cloud Functions](https://youtu.be/jB_KZ5aaLKo)
     * [11.  Implement Firebase/Google Cloud Functions & Redeploy to Firebase](https://youtu.be/lGD7E3BlkbE)
+
+
+NOTE:  I kept mentioning serverless functions as if NextJS is not serverless in this scenario when using server actions.  They're both serverless scenarios, just different solutions.  🤦🏽‍♂️

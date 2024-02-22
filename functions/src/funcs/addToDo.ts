@@ -12,6 +12,9 @@ export const addToDo = onRequest({cors: true}, async (req: any, res: any) => {
   const {userUid, todo} = req.query;
   if (!userUid || !todo) return res.status(400).send("Bad Request");
 
+  let isAuthorized = await userIsAuthorized(userUid);
+  if (!isAuthorized) return res.status(401).send("Unauthorized");
+
   const db = getFirestore();
   const collectionRef = db.collection("users").doc(userUid).collection("todos");
 
@@ -28,4 +31,15 @@ export const addToDo = onRequest({cors: true}, async (req: any, res: any) => {
       .send({status: "error", errorMessage: error.message, data: null});
   }
 });
+
+function userIsAuthorized (uid: string) {
+  return new Promise((resolve, reject) => {
+    admin.auth().getUser(uid).then(user => {
+      if(user.uid === uid) return resolve(true);
+      resolve(false);
+    }).catch(error => {
+      resolve(false);
+    })
+  })
+}
 
